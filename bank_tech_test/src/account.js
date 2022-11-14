@@ -6,13 +6,23 @@ class Account {
   deposit(num) {
     this.#errorMessage(num);
     this.balance += num;
-    this.transactions.push([this.#timeStamp(), "", num, this.balance]);
+    this.transactions.push({
+      date: this.#timeStamp(),
+      credit: num,
+      debit: "",
+      balance: this.balance,
+    });
   }
 
   withdraw(num) {
     this.#errorMessage(num);
     this.balance -= num;
-    this.transactions.push([this.#timeStamp(), num, "", this.balance]);
+    this.transactions.push({
+      date: this.#timeStamp(),
+      credit: "",
+      debit: num,
+      balance: this.balance,
+    });
   }
 
   #timeStamp() {

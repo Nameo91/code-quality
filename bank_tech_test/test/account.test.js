@@ -1,4 +1,4 @@
-const Account = require("./account");
+const Account = require("../src/account");
 
 describe("Account", () => {
   beforeEach(() => {
@@ -52,22 +52,19 @@ describe("Account", () => {
   it("returns a deposit transaction in an array", () => {
     const account = new Account();
     account.deposit(1000);
-    expect(account.transactions).toEqual([["26/02/2021", "", 1000, 1000]]);
+    expect(account.transactions[0].balance).toBe(1000);
   });
 
   it("returns a withdrawal transaction in an array", () => {
     const account = new Account();
     account.withdraw(300);
-    expect(account.transactions).toEqual([["26/02/2021", 300, "", -300]]);
+    expect(account.transactions[0].debit).toBe(300);
   });
 
   it("returns all transactions in an array", () => {
     const account = new Account();
     account.deposit(1000);
     account.withdraw(300);
-    expect(account.transactions).toEqual([
-      ["26/02/2021", "", 1000, 1000],
-      ["26/02/2021", 300, "", 700],
-    ]);
+    expect(account.transactions[1].balance).toBe(700);
   });
 });
