@@ -16,6 +16,10 @@ So I can manage my bank account,
 I want to withdraw money
 
 As a client,
+So I can manage my bank account,
+I want to know the balance
+
+As a client,
 So I can track my transactions,
 I want to see the bank statement
 ```
@@ -46,6 +50,10 @@ node
 - Node
 - Jest
 
+## Approach
+
+I attempted OOD and TDD to maintain good code quality and recompiled the given requirements into the user story before implementation.
+
 ## Specification
 
 ### Requirements
@@ -69,7 +77,3 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
-
-## Approach
-
-I attempted OOD and TDD to maintain good code quality and recompiled the given requirements into the user story before implementation.
