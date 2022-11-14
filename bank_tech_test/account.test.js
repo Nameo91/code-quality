@@ -1,6 +1,11 @@
 const Account = require("./account");
 
 describe("Account", () => {
+  beforeEach(() => {
+    mockDateObject = new Date("2021-02-26T22:42:16.652Z");
+    spy = jest.spyOn(global, "Date").mockImplementation(() => mockDateObject);
+  });
+
   it("initially has zero balance", () => {
     const account = new Account();
     expect(account.balance).toBe(0.0);
@@ -19,6 +24,11 @@ describe("Account", () => {
     expect(account.balance).toBe(1500);
   });
 
+  it("throw an error if the given argument is not a number", () => {
+    const account = new Account();
+    expect(() => account.deposit("NaN")).toThrow("This is not a number");
+  });
+
   it("calculates the balance after withdrawal", () => {
     const account = new Account();
     account.balance = 1000;
@@ -32,5 +42,32 @@ describe("Account", () => {
     account.withdraw(500);
     account.withdraw(120);
     expect(account.balance).toBe(380);
+  });
+
+  it("throw an error if the given argument is not a number", () => {
+    const account = new Account();
+    expect(() => account.withdraw("NaN")).toThrow("This is not a number");
+  });
+
+  it("returns a deposit transaction in an array", () => {
+    const account = new Account();
+    account.deposit(1000);
+    expect(account.transactions).toEqual([["26/02/2021", "", 1000, 1000]]);
+  });
+
+  it("returns a withdrawal transaction in an array", () => {
+    const account = new Account();
+    account.withdraw(300);
+    expect(account.transactions).toEqual([["26/02/2021", 300, "", -300]]);
+  });
+
+  it("returns all transactions in an array", () => {
+    const account = new Account();
+    account.deposit(1000);
+    account.withdraw(300);
+    expect(account.transactions).toEqual([
+      ["26/02/2021", "", 1000, 1000],
+      ["26/02/2021", 300, "", 700],
+    ]);
   });
 });
