@@ -10,7 +10,7 @@ class Statement {
 
   body() {
     this.transactions.reverse().forEach((transaction) => {
-      let date = transaction.date;
+      let date = this.#timeStamp(transaction.date);
       let credit = transaction.credit;
       let debit = transaction.debit;
       let balance = transaction.balance.toFixed(2);
@@ -21,6 +21,11 @@ class Statement {
 
   #header() {
     return "date || credit || debit || balance";
+  }
+
+  #timeStamp(date) {
+    const dateString = date.toLocaleDateString("en-GB");
+    return dateString;
   }
 
   #bodyFromatter(date, credit, debit, balance) {
