@@ -24,9 +24,7 @@ So I can track my transactions,
 I want to see the bank statement
 ```
 
-## How to Run Program
-
-### Program Set Up
+## Running the program
 
 1. Fork this repository and Clone your fork to your local machine
 2. Install Node.js dependencies
@@ -39,11 +37,33 @@ npm install
 
 ```
 node
+
 ```
 
-### Running the Program
+To make transactions
 
-### Testing
+```
+const Account = require('./src/account')
+const account = new Account()
+
+account.deposit(1000)
+account.withdraw(500)
+account.deposit(2000)
+```
+
+To print statement
+
+```
+const Statement = require('./src/statement')
+const statement = new Statement(account.transactions)
+statement.print()
+```
+
+## Testing and coverage
+
+```
+jest --coverage
+```
 
 ## Technologies
 
