@@ -15,4 +15,4 @@ What makes your code
 
 ## Tech Test
 
-1. [Bank-tech-test] (https://github.com/Nameo91/code-quality/tree/main/bank_tech_test)
+1. [Bank-tech-test] (../bank_tech_test)
