@@ -65,14 +65,12 @@ statement.print()
 jest --coverage
 ```
 
-## Technologies
-
-- Node
-- Jest
-
 ## Approach
 
+![Bank-tech-test](./diagram/bank-tech-test.png)
+
 I attempted OOD and TDD to maintain good code quality and recompiled the given requirements into the user story before implementation.
+I decided to
 
 ## Specification
 
