@@ -44,10 +44,10 @@ describe("Account", () => {
     expect(() => account.withdraw("NaN")).toThrow("This is not a number");
   });
 
-  // it("returns a deposit transaction in an array", () => {
+  // it("returns all transactions", () => {
   //   const account = new Account();
   //   account.deposit(1000);
-  //   expect(account.transactions[0].balance).toBe(1000);
+  //   expect(account.getTransactions()[0].balance).toBe(1000);
   // });
 
   // it("returns a withdrawal transaction in an array", () => {

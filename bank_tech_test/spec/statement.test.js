@@ -19,8 +19,7 @@ describe("Statement", () => {
     const mockedTransactions = [
       {
         date: mockDateObject,
-        credit: "1000.00",
-        debit: "",
+        credit: 1000,
         balance: 1000,
       },
     ];
@@ -35,11 +34,11 @@ describe("Statement", () => {
     );
   });
 
-  xit("prints transactions in the formatted order", () => {
+  it("prints transactions in the formatted order", () => {
     const mockedTransactions = [
-      { date: "10/01/2023", credit: "1000.00", debit: "", balance: 1000 },
-      { date: "13/01/2023", credit: "2000.00", debit: "", balance: 3000 },
-      { date: "14/01/2023", credit: "", debit: "500.00", balance: 2500 },
+      { date: mockDateObject, credit: 1000, balance: 1000 },
+      { date: mockDateObject, credit: 2000, balance: 3000 },
+      { date: mockDateObject, debit: 500, balance: 2500 },
     ];
 
     const statement = new Statement(mockedTransactions);
@@ -49,7 +48,7 @@ describe("Statement", () => {
     expect(console.log).toHaveBeenCalledWith(
       "date || credit || debit || balance" +
         "\n" +
-        "14/01/2023 ||  || 500.00 || 2500.00\n13/01/2023 || 2000.00 ||  || 3000.00\n10/01/2023 || 1000.00 ||  || 1000.00\n"
+        "15/11/2022 ||  || 500.00 || 2500.00\n15/11/2022 || 2000.00 ||  || 3000.00\n15/11/2022 || 1000.00 ||  || 1000.00\n"
     );
   });
 });

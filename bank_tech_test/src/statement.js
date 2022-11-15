@@ -11,8 +11,8 @@ class Statement {
   body() {
     this.transactions.reverse().forEach((transaction) => {
       let date = this.#timeStamp(transaction.date);
-      let credit = transaction.credit;
-      let debit = transaction.debit;
+      let credit = this.#currency(transaction.credit);
+      let debit = this.#currency(transaction.debit);
       let balance = transaction.balance.toFixed(2);
 
       this.#bodyFromatter(date, credit, debit, balance);
@@ -31,6 +31,14 @@ class Statement {
   #bodyFromatter(date, credit, debit, balance) {
     this.statement += `${date} || ${credit} || ${debit} || ${balance}\n`;
     return this.statement;
+  }
+
+  #currency(num) {
+    if (!isNaN(num)) {
+      return num.toFixed(2);
+    } else {
+      return "";
+    }
   }
 }
 

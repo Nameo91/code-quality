@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1668533153059" clover="3.2.0">
+  <project timestamp="1668533153059" name="All files">
+    <metrics statements="29" coveredstatements="29" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7" elements="40" coveredelements="40" complexity="0" loc="29" ncloc="29" packages="1" files="2" classes="2"/>
+    <file name="account.js" path="/Users/naraekim/code-quality/bank_tech_test/src/account.js">
+      <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="3" count="7" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="28" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+    </file>
+    <file name="statement.js" path="/Users/naraekim/code-quality/bank_tech_test/src/statement.js">
+      <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="16" count="4" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="23" count="3" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="28" count="4" type="stmt"/>
+      <line num="32" count="4" type="stmt"/>
+      <line num="33" count="4" type="stmt"/>
+      <line num="37" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="4" type="stmt"/>
+      <line num="40" count="4" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
