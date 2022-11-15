@@ -58,7 +58,7 @@ describe("Account", () => {
   it("returns a withdrawal transaction in an array", () => {
     const account = new Account();
     account.withdraw(300);
-    expect(account.transactions[0].debit).toBe(300);
+    expect(account.transactions[0].debit).toEqual("300.00");
   });
 
   it("returns all transactions in an array", () => {

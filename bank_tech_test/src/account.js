@@ -3,12 +3,13 @@ class Account {
     this.balance = 0;
     this.transactions = [];
   }
+
   deposit(num) {
     this.#errorMessage(num);
     this.balance += num;
     this.transactions.push({
       date: this.#timeStamp(),
-      credit: num,
+      credit: num.toFixed(2),
       debit: "",
       balance: this.balance,
     });
@@ -20,7 +21,7 @@ class Account {
     this.transactions.push({
       date: this.#timeStamp(),
       credit: "",
-      debit: num,
+      debit: num.toFixed(2),
       balance: this.balance,
     });
   }
