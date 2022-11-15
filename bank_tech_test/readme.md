@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-This is a practice of tech test to satisfy the requirements.
+This is a small project designed to practice a tech test.
 
 ## Description
 
@@ -37,10 +37,10 @@ npm install
 
 ```
 node
-
 ```
 
-To make transactions
+4. Run the program
+   To make transactions
 
 ```
 const Account = require('./src/account')
@@ -69,8 +69,10 @@ jest --coverage
 
 ![Bank-tech-test](./diagram/bank-tech-test.png)
 
-I attempted OOD and TDD to maintain good code quality and recompiled the given requirements into the user story before implementation.
-I decided to
+- Attempted OOD and TDD to maintain good code quality
+- Recompiled the given requirements into the user story before implementation.
+- An account can make deposit or withdrawal transaction and the transactions are stored.
+- The stored transactions are formatted and printed in statement class.
 
 ## Specification
 
