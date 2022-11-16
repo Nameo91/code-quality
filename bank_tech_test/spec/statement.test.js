@@ -1,3 +1,4 @@
+/* eslint no-use-before-define: 0 */
 const Statement = require("../src/statement");
 
 describe("Statement", () => {

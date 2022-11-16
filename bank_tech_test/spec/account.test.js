@@ -1,3 +1,4 @@
+/* eslint no-use-before-define: 0 */
 const Account = require("../src/account");
 
 describe("Account", () => {
@@ -19,7 +20,7 @@ describe("Account", () => {
     expect(account.balance).toBe(1500);
   });
 
-  it("throw an error if the given argument is not a number", () => {
+  it("throw an error if the deposit is not a number", () => {
     const account = new Account();
     expect(() => account.deposit("NaN")).toThrow("This is not a number");
   });
@@ -39,27 +40,27 @@ describe("Account", () => {
     expect(account.balance).toBe(380);
   });
 
-  it("throw an error if the given argument is not a number", () => {
+  it("throw an error if the withdraw is not a number", () => {
     const account = new Account();
     expect(() => account.withdraw("NaN")).toThrow("This is not a number");
   });
 
-  // it("returns all transactions", () => {
-  //   const account = new Account();
-  //   account.deposit(1000);
-  //   expect(account.getTransactions()[0].balance).toBe(1000);
-  // });
+  it("returns all transactions", () => {
+    const account = new Account();
+    account.deposit(1000);
+    expect(account.transactions[0].balance).toBe(1000);
+  });
 
-  // it("returns a withdrawal transaction in an array", () => {
-  //   const account = new Account();
-  //   account.withdraw(300);
-  //   expect(account.transactions[0].debit).toEqual("300.00");
-  // });
+  it("returns a withdrawal transaction in an array", () => {
+    const account = new Account();
+    account.withdraw(300);
+    expect(account.transactions[0].debit).toEqual(300);
+  });
 
-  // it("returns all transactions in an array", () => {
-  //   const account = new Account();
-  //   account.deposit(1000);
-  //   account.withdraw(300);
-  //   expect(account.transactions[1].balance).toBe(700);
-  // });
+  it("returns all transactions in an array", () => {
+    const account = new Account();
+    account.deposit(1000);
+    account.withdraw(300);
+    expect(account.transactions[1].balance).toBe(700);
+  });
 });
